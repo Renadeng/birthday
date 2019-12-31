@@ -3,64 +3,65 @@
 <html>
 
 <head>
-  <title>The Mighty Project</title>
+  <title>The Birthday Project</title>
   <link rel="stylesheet" href="styles/styles.css">
-  <script async src="./javascript/index.js"></script>
 </head>
 
 <body>
   <h1>* Happy Birthday *</h1>
 
+  <!-- Show solar and lunar time and date in different countries. -->
   <table>
     <tr>
-      <th>Today is</th>
-      <th>今天是</th>
-      <th>Happy birthday to</th>
-      <th>On</th>
-      <th>Location</th>
-      <th>Canada time</th>
+      <th>Canada🇨🇦</th>
+      <th>中国🇨🇳</th>
+      <th>New Zealand🇳🇿</th>
     </tr>
 
     <tr>
-      <td id="todayDate"></td>
-      <td id="todayLunarDate">lunar-calendar</td>
-      <td id="birthdayName">name</td>
-      <td id="birthdayDate">date-westen-calendar</td>
-      <td id="birthdayCityCountry">city-country</td>
-      <td id="birthdayCanadaTime">8am of the date on the name's location</td>
+      <td id="todayCASolarTime"></td>
+      <td id="todayCNSolarTime"></td>
+      <td id="todayNZSolarTime"></td>
+    </tr>
+
+    <tr>
+      <td id="todayCALunarDate"></td>
+      <td id="todayCNLunarDate"></td>
+      <td id="todayNZLunarTime"></td>
     </tr>
   </table>
 
   <div class="grieve-deng">
     <div class='section-style' id="timInfo">
       <image src="image/tim.jpg" alt="" />
-      <p id="tim">Tim</p>
-      <p id="timBirthday" type="date">1979-10-30</p>
-      <p id="timCity">Waterloo, Canada</p>
+      <p id="timBD" type="date"></p>
     </div>
 
     <div class="section-style" id="renaInfo">
       <image src="image/rena.png" />
-      <p id="rena">Rena</p>
-      <p id="renaBirthday" type="date">1986-01-16</p>
-      <p id="renaCity">Waterloo, Canada</p>
+      <p id="renaBD" type="date"></p>
     </div>  
   </div>
 
   <div class="deng">
     <div class='section-style'>
       <image src="image/daolun.jpg" alt="" />
-      <p>Daolun</p>
+      <p id="daolunBD"></p>
     </div>
 
     <div class="section-style">
       <image src="image/shufen.jpg" />
-      <p>Shufen</p>
+      <p id="shufenBD"></p>
     </div>  
 
     <div class="section-style">
       <image src="image/he.jpg" />
-      <p>He</p>
+      <p id="heBD"></p>
+    </div>  
+
+    <div class="section-style">
+      <image src="image/liang.jpg" />
+      <p id="liangBD"></p>
     </div>  
   </div>
 	
@@ -76,6 +77,21 @@
     </div>  
   </div>
 
+<!--Convert today Canada solar date to lunar date-->
+<script async src="./javascript/solar2lunar.js"></script>
+
+<!--Get time for different countries-->>
+<script async src="./javascript/lunarsolarcalendar.js"></script>
+
+<script async src="./javascript/calendar.js"></script>
+
+<!--Convert a lunar date to solar date using calendar.js
+<script async src="./javascript/calendar.js"></script>
+<script>
+    import calendar from "./javascript/calendar.js"
+    console.log(calendar.lunar2solar(1986,01,16))
+</script>
+-->
 </body>
 
 </html>
